@@ -1,0 +1,29 @@
+entity Message {
+    content String required
+    createdAt Instant required
+    updateAt Instant
+}
+entity Canal {
+    name String required
+    createdAt Instant required
+    updatedAt Instant
+    description String
+}
+
+relationship ManyToMany {
+    Canal{user(login)} to User
+}
+
+relationship OneToMany {
+    Canal{messages} to Message{canal}
+}
+relationship ManyToOne {
+    Message{user(login)} to User
+}
+
+
+
+paginate Message with pagination
+dto * with mapstruct
+service * with serviceImpl
+

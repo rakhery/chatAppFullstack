@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="message">
+      <h2 data-cy="messageDetailsHeading"><span>Message</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ message.id }}</span>
+        </dd>
+        <dt><span>Content</span></dt>
+        <dd>
+          <span>{{ message.content }}</span>
+        </dd>
+        <dt><span>Created At</span></dt>
+        <dd>
+          <span>{{ message.createdAt | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>Update At</span></dt>
+        <dd>
+          <span>{{ message.updateAt | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+          <span>{{ message.user?.login }}</span>
+        </dd>
+        <dt><span>Canal</span></dt>
+        <dd>
+          <div *ngIf="message.canal">
+            <a [routerLink]="['/canal', message.canal.id, 'view']">{{ message.canal.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/message', message.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1 @@
+org.springframework.test.context.ContextCustomizerFactory = fr.m2i.apichat.config.TestContainersSpringContextCustomizerFactory

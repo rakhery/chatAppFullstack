@@ -1,0 +1,8 @@
+{
+  "generator-jhipster:7.9.3": {
+    "promptValues": {
+      "packageName": "fr.m2i.apichat",
+      "nativeLanguage": "en"
+    }
+  }
+}
