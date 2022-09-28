@@ -9,7 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 /**
- * A Canal.
+ * l'entité Canal
  */
 @Entity
 @Table(name = "canal")
@@ -47,7 +47,6 @@ public class Canal implements Serializable {
     @JoinTable(name = "rel_canal__user", joinColumns = @JoinColumn(name = "canal_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> users = new HashSet<>();
 
-    // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public Long getId() {
         return this.id;
@@ -168,7 +167,6 @@ public class Canal implements Serializable {
         return this;
     }
 
-    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
     public boolean equals(Object o) {
@@ -183,11 +181,9 @@ public class Canal implements Serializable {
 
     @Override
     public int hashCode() {
-        // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
         return getClass().hashCode();
     }
 
-    // prettier-ignore
     @Override
     public String toString() {
         return "Canal{" +
