@@ -17,7 +17,7 @@ import org.hibernate.annotations.BatchSize;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 /**
- * Table User
+ * Entité Utilisateur
  */
 @Entity
 @Table(name = "jhi_user")
@@ -208,22 +208,38 @@ public class User extends AbstractAuditingEntity<Long> implements Serializable {
 
     @Override
     public int hashCode() {
-        // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
         return getClass().hashCode();
     }
 
-    // prettier-ignore
     @Override
     public String toString() {
-        return "User{" +
-            "login='" + login + '\'' +
-            ", firstName='" + firstName + '\'' +
-            ", lastName='" + lastName + '\'' +
-            ", email='" + email + '\'' +
-            ", imageUrl='" + imageUrl + '\'' +
-            ", activated='" + activated + '\'' +
-            ", langKey='" + langKey + '\'' +
-            ", activationKey='" + activationKey + '\'' +
-            "}";
+        return (
+            "User{" +
+            "login='" +
+            login +
+            '\'' +
+            ", firstName='" +
+            firstName +
+            '\'' +
+            ", lastName='" +
+            lastName +
+            '\'' +
+            ", email='" +
+            email +
+            '\'' +
+            ", imageUrl='" +
+            imageUrl +
+            '\'' +
+            ", activated='" +
+            activated +
+            '\'' +
+            ", langKey='" +
+            langKey +
+            '\'' +
+            ", activationKey='" +
+            activationKey +
+            '\'' +
+            "}"
+        );
     }
 }
